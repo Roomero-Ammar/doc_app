@@ -1,4 +1,8 @@
 import 'package:doctors_speciality/core/routing/routes.dart';
+import 'package:doctors_speciality/features/home/ui/home_screen.dart';
+import 'package:doctors_speciality/features/login/ui/login_screen.dart';
+import 'package:doctors_speciality/features/onboarding/onboarding_screen.dart';
+import 'package:doctors_speciality/features/sign_up/ui/widgets/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -8,21 +12,21 @@ class AppRouter {
 
     switch (settings.name) {
       case Routes.onBoardingScreen:
-        // return MaterialPageRoute(
-        //   builder: (_) => const OnboardingScreen(),
-        // );
+        return MaterialPageRoute(
+          builder: (_) => const OnboardingScreen(),
+        );
       case Routes.loginScreen:
-        // return MaterialPageRoute(
-        //   builder: (_) => const LoginScreen(),
-        // );
+        return MaterialPageRoute(
+          builder: (_) => const LoginScreen(),
+        );
       case Routes.signUpScreen:
-        // return MaterialPageRoute(
-        //   builder: (_) => const SignupScreen(),
-        // );
+        return MaterialPageRoute(
+          builder: (_) => const SignUpScreen(),
+        );
       case Routes.homeScreen:
-        // return MaterialPageRoute(
-        //   builder: (_) => const HomeScreen(),
-        // );
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
+        );
       default:
         return null;
     }
