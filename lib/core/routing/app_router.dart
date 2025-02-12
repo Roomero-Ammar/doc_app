@@ -3,6 +3,7 @@ import 'package:doctors_speciality/features/home/ui/home_screen.dart';
 import 'package:doctors_speciality/features/login/ui/login_screen.dart';
 import 'package:doctors_speciality/features/onboarding/onboarding_screen.dart';
 import 'package:doctors_speciality/features/sign_up/ui/widgets/sign_up_screen.dart';
+import 'package:doctors_speciality/features/splash/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -11,6 +12,12 @@ class AppRouter {
     final arguments = settings.arguments;
 
     switch (settings.name) {
+
+case Routes.splashScreen:
+        return MaterialPageRoute(
+          builder: (_) =>  SplashScreen(),
+        );
+
       case Routes.onBoardingScreen:
         return MaterialPageRoute(
           builder: (_) => const OnboardingScreen(),
