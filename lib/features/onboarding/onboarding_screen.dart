@@ -2,6 +2,9 @@ import 'package:doctors_speciality/features/onboarding/widgets/doc_logo_and_name
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import 'widgets/doc_image_and_text.dart';
+import 'widgets/get_started_button.dart';
+
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
@@ -15,6 +18,8 @@ class OnboardingScreen extends StatelessWidget {
             child: Column(
               children: [
                 DocLogoAndName(),
+                DocImageAndText(),
+                GetStartedButton(),
               ],
             ),
           ),
