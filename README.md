@@ -46,4 +46,4 @@ flutter_native_splash:
 dart run flutter_native_splash:create --path=flutter_native_splash.yaml
 
 
-كل الكلام اللى قولناه ده علشان متعملش اسبلاش اسكرين بايدك
+ كل الكلام اللى قولناه ده علشان متعملش اسبلاش اسكرين بايدك و ده بيكون أفضل و بروفيشنال اكتر
