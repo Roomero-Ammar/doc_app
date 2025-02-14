@@ -1,6 +1,6 @@
-# doctors_speciality
+# doc_app
 
-A new Flutter project.
+A responsive and engaging mobile application built using Flutter, showcasing a comprehensive list of medical specialties. The app utilizes BLoC architecture for state management, Firebase for backend services, and API integration for seamless data retrieval.
 
 ## Getting Started
 
