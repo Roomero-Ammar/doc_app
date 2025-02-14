@@ -32,3 +32,4 @@ class DontHaveAccountText extends StatelessWidget {
     );
   }
 }
+
