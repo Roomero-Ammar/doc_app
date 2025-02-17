@@ -29,7 +29,7 @@ case Routes.splashScreen:
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<LoginCubit>(),
-            child: const LoginScreen(),
+            child:  LoginScreen(),
           ),
         );
       case Routes.signUpScreen:
