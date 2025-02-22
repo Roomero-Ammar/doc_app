@@ -1,4 +1,8 @@
+
 default_platform(:android)
+
+# To run the lane, execute the following command:
+# bundle exec fastlane firebase_distribution
 
 platform :android do
   desc "Lane for Android Firebase App Distribution"
@@ -6,13 +10,12 @@ platform :android do
     sh "flutter clean"
     sh "flutter build apk --release --flavor production --target lib/main_production.dart --no-tree-shake-icons"
     firebase_app_distribution(
-    app: "1:170894111130:android:f72b9f56a5e41123930a23",
-    firebase_cli_token: "1//03tfUHIr1hX0eCgYIARAAGAMSNwF-L9Irk5DXXnfeWrn5V-S_xxeLi0Zf8C6-e7_MR6_hQS1eUdZInZkMykFEaI2BszOaszoGX3s",
-    android_artifact_type: "APK",
-    android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
-    testers: "ay1513601@gmail.com",
-    release_notes: "Testing something with GitHub Actions, trying to push directly from master branch",
+        app: "1:170894111130:android:f72b9f56a5e41123930a23",
+        firebase_cli_token: "1//03yY_b4ToNdH7CgYIARAAGAMSNwF-L9Ir4DuRfvR8EfcKbid2BeyewZbAjr5gxpFZmNXH8RF5hJx9GWMIVG5tekPLAt2JORPoANY",
+        android_artifact_type: "APK",
+        android_artifact_path: "../build/app/outputs/flutter-apk/app-production-release.apk",
+        testers: "ay1513601@gmail.com",
+        release_notes: "Testing something with GitHub Actions, trying to push directly from master branch",
   )
-    gradle(task: "test")
   end
 end
