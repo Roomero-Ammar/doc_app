@@ -10,26 +10,22 @@ class SpecialityListViewItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(bottom: 16.h),
-      child: Column(
-        children: [
-          CircleAvatar(
-            radius: 40,
-            child: SvgPicture.asset(
-              AppImages.generalSpeciality,
-              height: 40.h,
-              width: 40.w,
-            ),
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 40,
+          child: SvgPicture.asset(
+            AppImages.generalSpeciality,
+            height: 40.h,
+            width: 40.w,
           ),
-          verticalSpace(8),
-          Text(
-            'Muscle',
-            style: TextStyles.font12DarkBlueRegular
-          ),
-          const SizedBox(height: 4),
-        ],
-      ),
+        ),
+        verticalSpace(8),
+        Text(
+          'Muscle',
+          style: TextStyles.font12DarkBlueRegular
+        ),
+      ],
     );
   }
 }
