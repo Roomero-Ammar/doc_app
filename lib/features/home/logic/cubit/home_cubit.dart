@@ -5,7 +5,13 @@ import 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
   final HomeRepo _homeRepo;
-  HomeCubit(this._homeRepo) : super(HomeState.initial());
+  HomeCubit(this._homeRepo) : super(HomeState.initial())
+  // );
+  {
+    getSpecialization();
+  }
+
+  
   List<SpecializationsData?>? specializationsList = [];
 
   void getSpecialization() async{
