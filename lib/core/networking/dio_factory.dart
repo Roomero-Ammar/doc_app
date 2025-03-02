@@ -23,6 +23,13 @@ class DioFactory {
     }
   }
 
+static void addDioHeaders() async {
+    dio?.options.headers = {
+      'Accept': 'application/json',
+      'Authorization':
+          'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL3ZjYXJlLmludGVncmF0aW9uMjUuY29tL2FwaS9hdXRoL2xvZ2luIiwiaWF0IjoxNzM5ODMyMjYwLCJleHAiOjE3Mzk5MTg2NjAsIm5iZiI6MTczOTgzMjI2MCwianRpIjoiVzdhTDBrbUpMUnIya0dBQSIsInN1YiI6IjMyNzYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.MRI-3kedgPr5Dxk8QD4zoYbkCg4mMKbHWXsNkDnl_is',
+    };
+  }
  
   static void addDioInterceptor() {
     dio?.interceptors.add(

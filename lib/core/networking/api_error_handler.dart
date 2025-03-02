@@ -113,11 +113,21 @@ ApiErrorModel _handleError(DioException error) {
     case DioExceptionType.receiveTimeout:
       return DataSource.receiveTimeout.getFailure();
     case DioExceptionType.badResponse:
-      if (error.response != null && error.response?.statusCode != null) {
-        return ApiErrorModel.fromJson(error.response!.data);
-      } else {
-        return DataSource.defaultError.getFailure();
-      }
+  if (error.response != null) {
+    var responseData = error.response!.data;
+    var statusCode = error.response!.statusCode ?? 500; // Default to 500 if null
+
+    if (responseData is Map<String, dynamic>) {
+      return ApiErrorModel.fromJson(responseData);
+    } else if (responseData is String) {
+      return ApiErrorModel(message: responseData, code: statusCode);
+    } else {
+      return ApiErrorModel(message: "Unexpected error type: ${responseData.runtimeType}", code: statusCode);
+    }
+  } else {
+    return DataSource.defaultError.getFailure();
+  }
+
     case DioExceptionType.unknown:
       if (error.response != null && error.response?.statusCode != null) {
         return ApiErrorModel.fromJson(error.response!.data);
