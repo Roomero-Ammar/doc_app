@@ -1,11 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:doctors_speciality/core/helpers/spacing.dart';
+import 'package:doctors_speciality/core/theming/colors.dart';
 import 'package:doctors_speciality/core/theming/styles.dart';
+import 'package:doctors_speciality/features/home/data/models/specializations_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shimmer/shimmer.dart';
 
 class DoctorsListViewItem extends StatelessWidget {
-  const DoctorsListViewItem({super.key});
+  final Doctors? doctorsModel;
+  const DoctorsListViewItem({super.key, this.doctorsModel});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class DoctorsListViewItem extends StatelessWidget {
                 "https://static.wikia.nocookie.net/five-world-war/images/6/64/Hisoka.jpg/revision/latest?cb=20190313114050",
             progressIndicatorBuilder: (context, url, downloadProgress) {
               return Shimmer.fromColors(
-                baseColor: Colors.grey[300]!,
+                baseColor: ColorsManager.lightGray,
                 highlightColor: Colors.white,
                 child: Container(
                   width: 110.w,
@@ -44,24 +48,24 @@ class DoctorsListViewItem extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(width: 16.w),
+          horizontalSpace(16),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Doctor Name', // يمكنك تغيير الاسم حسب الحاجة
+                  doctorsModel?.name ?? 'Name',
                   style: TextStyles.font18DarkBlueBold,
                   overflow: TextOverflow.ellipsis,
                 ),
-                SizedBox(height: 5.h),
+                verticalSpace(5),
                 Text(
-                  'Degree | Phone Number', // يمكنك تغيير المعلومات حسب الحاجة
+                  '${doctorsModel?.degree} | ${doctorsModel?.phone}',
                   style: TextStyles.font12GrayMedium,
                 ),
-                SizedBox(height: 5.h),
+                verticalSpace(5),
                 Text(
-                  'Email Address', // يمكنك تغيير البريد الإلكتروني حسب الحاجة
+                  doctorsModel?.email ?? 'Email',
                   style: TextStyles.font12GrayMedium,
                 ),
               ],

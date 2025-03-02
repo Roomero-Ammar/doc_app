@@ -14,5 +14,9 @@ class HomeState with _$HomeState {
   const factory HomeState.specializationsError(ErrorHandler errorHandler) =
       SpecializationsError;
 
+// Doctors
+  const factory HomeState.doctorsSuccess(List<Doctors?>? doctorsList) = DoctorsSuccess;
+  const factory HomeState.doctorsError(ErrorHandler errorHandler) =
+      DoctorsError;
 
 }
